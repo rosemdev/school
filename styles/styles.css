@@ -1,0 +1,175 @@
+:root {
+    --icon-color: black;
+    --active-color: #2988e2;
+    --text-color: #4c4747;
+}
+
+.container {
+    max-width: 1400px;
+    width: 100%;
+    margin: auto;
+    padding: 0 2rem;
+}
+
+header {
+    background-color: white;
+    box-shadow: 0 3px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+header .logo {
+    width: 8rem;
+}
+
+header nav {
+    display: flex;
+    margin-left: auto;
+    margin-right: 4rem;
+}
+
+header nav a {
+    font-weight: bold;
+    padding: 2.5rem 1rem;
+    text-transform: uppercase;
+    color: black;
+    border: solid 0 var(--active-color);
+    transition: color .4s, padding-bottom .4s, border-width .4s;
+    will-change: color, padding-bottom, border-width;
+}
+
+header nav a:hover, header nav a.active {
+    color: var(--active-color);
+    padding-bottom: 2.1rem;
+    border-bottom-width: .4rem;
+}
+
+i {
+    border-radius: 50%;
+    padding: .7rem;
+    color: white;
+    margin: .3rem;
+}
+
+i:hover {
+    cursor: pointer;
+}
+
+i[class*=search] {
+    background-color: #2988e2;
+}
+
+i[class*=shopping-cart] {
+    background-color: black;
+}
+
+.slider {
+    position: relative;
+    height: 600px;
+    overflow: hidden;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.slider > li {
+    height: 100%;
+}
+
+.slider-item-description {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+}
+
+.slider img {
+    width: 100%;
+    position: absolute;
+    z-index: -1;
+}
+
+.slider h2 {
+    color: white;
+    text-align: center;
+    font-size: 3rem;
+    padding: 0 20%;
+
+}
+
+.buttons {
+    display: flex;
+    text-transform: uppercase;
+    justify-content: center;
+
+}
+
+.button {
+    padding: 1rem 2rem;
+    margin-left: .5rem;
+    border-radius: .2rem;
+    color: black;
+    background-color: white;
+    transition: box-shadow .4s;
+}
+
+.button.active {
+    color: white;
+    background-color: var(--active-color);
+}
+
+.button:hover {
+    box-shadow: 0 0 .5rem #222;
+}
+
+.wrapper {
+    background-color: #EFEFEE;
+    padding-top: 3rem;
+}
+
+.content-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+}
+
+.content-wrapper img {
+    max-width: 35rem;
+    width: 100%;
+    max-height: 23rem;
+    margin: 0 4rem;
+}
+
+.about-us h4 {
+    font-size: 2rem;
+    text-transform: capitalize;
+
+}
+
+.about-us p {
+    font-size: 1.2rem;
+    color:var(--text-color);
+    text-align: justify;
+}
+.about-us a {
+    background-color: var(--active-color);
+    padding: 1rem 1.5rem;
+    color: white;
+    display: inline-block;
+    margin: 1rem 0;
+}
+
+.about-us a:hover {
+    box-shadow: 0 0 .5rem #222;
+}
+
+.about-us a::after {
+    content:'>';
+    margin-left: .6rem;
+}
