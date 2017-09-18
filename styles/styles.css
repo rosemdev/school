@@ -58,6 +58,8 @@ i {
 
 i:hover {
     cursor: pointer;
+    box-shadow: 0 0 .5rem #222;
+
 }
 
 i[class*=search] {
