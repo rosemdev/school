@@ -4,36 +4,57 @@
     --text-color: #4c4747;
 }
 
-.container {
-    max-width: 1400px;
-    width: 100%;
-    margin: auto;
-    padding: 0 2rem;
-}
-
 header {
+    height: 6.5rem;
     background-color: white;
-    box-shadow: 0 3px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+    /*box-shadow: 0 3px 0 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);*/
+    box-shadow: 0 0 0.75rem #555;
 }
 
-header .container {
+header [class*="col-"] {
+    padding: 0 1.5%;
+}
+
+header .content {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
     align-items: center;
 }
 
-header .logo {
-    width: 8rem;
+header > .container, header > .container > .row, header .logo {
+    height: 100%;
 }
 
-header nav {
+header .logo::before {
+    content: '';
+    width: 0;
+    height: 100%;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+header .logo img {
+    display: inline-block;
+    vertical-align: middle;
+    max-width: 8rem;
+    width: 100%;
+}
+
+header .menu {
     display: flex;
-    margin-left: auto;
-    margin-right: 4rem;
+    justify-content: flex-end;
 }
 
-header nav a {
+header .menu::before {
+    content: 'BRG';
+}
+
+header .menu a {
+    /**/
+    display: none;
+    /**/
+
     font-weight: bold;
     padding: 2.5rem 1rem;
     text-transform: uppercase;
@@ -43,17 +64,21 @@ header nav a {
     will-change: color, padding-bottom, border-width;
 }
 
-header nav a:hover, header nav a.active {
+header .menu a:hover, header .menu a.active {
     color: var(--active-color);
     padding-bottom: 2.1rem;
     border-bottom-width: .4rem;
+}
+
+header .links {
+    text-align: right;
 }
 
 i {
     border-radius: 50%;
     padding: .7rem;
     color: white;
-    margin: .3rem;
+    margin: 2rem 0;
 }
 
 i:hover {
@@ -72,7 +97,7 @@ i[class*=shopping-cart] {
 
 .slider {
     position: relative;
-    height: 600px;
+    height: auto;
     overflow: hidden;
     list-style: none;
     margin: 0;
@@ -95,25 +120,38 @@ i[class*=shopping-cart] {
     position: absolute;
     z-index: -1;
 }
+.item {
+    width: 100%;
+}
+
+.owl-dots {
+    width: 2rem;
+    height: 2rem;
+    background-color: var(--active-color);
+    border-radius: 50%;
+}
 
 .slider h2 {
     color: white;
     text-align: center;
-    font-size: 3rem;
-    padding: 0 20%;
-
+    font-size: 8vw;
+    padding: 4vw;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: .2rem;
 }
 
 .buttons {
     display: flex;
+    flex-wrap: wrap;
     text-transform: uppercase;
     justify-content: center;
-
 }
 
 .button {
     padding: 1rem 2rem;
-    margin-left: .5rem;
+    margin: .5rem;
     border-radius: .2rem;
     color: black;
     background-color: white;
@@ -134,24 +172,16 @@ i[class*=shopping-cart] {
     padding-top: 3rem;
 }
 
-.content-wrapper {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-
-}
-
-.content-wrapper img {
-    max-width: 35rem;
+.content img {
+    max-width: 25rem;
     width: 100%;
-    max-height: 23rem;
-    margin: 0 4rem;
+    margin: 2.66rem auto;
 }
 
 .about-us h4 {
     font-size: 2rem;
     text-transform: capitalize;
-
+    text-align: center;
 }
 
 .about-us p {
@@ -160,9 +190,6 @@ i[class*=shopping-cart] {
     text-align: justify;
 }
 .about-us a {
-    background-color: var(--active-color);
-    padding: 1rem 1.5rem;
-    color: white;
     display: inline-block;
     margin: 1rem 0;
 }
@@ -176,4 +203,30 @@ i[class*=shopping-cart] {
     margin-left: .6rem;
 }
 
+/* Large */
+@media (min-width: 992px) {
+    header [class*="col-"] {
+        padding: 0 15px;
+    }
 
+    header .menu::before {
+        display: none;
+    }
+
+    header .menu a {
+        display: block;
+    }
+
+    .about-us h4 {
+        text-align: left;
+    }
+
+    .slider {
+        height: 600px;
+    }
+
+    .slider h2 {
+        font-size: 3rem;
+        padding: 2rem;
+    }
+}

@@ -7,85 +7,98 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>New Page for school</title>
     <link rel="shortcut icon" href="../img/favicon.ico"/>
+    <link rel="stylesheet" type="text/css" href="../grid/grid.css">
     <link rel="stylesheet" type="text/css"
           href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
     <link rel="stylesheet" type="text/css" href="../styles/styles.css">
     <link rel="stylesheet" type="text/css" href="../styles/reset.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/assets/owl.carousel.min.css">
     <link href="https://fonts.googleapis.com/css?family=Libre+Franklin:400,400i,700,700i" rel="stylesheet">
-    <script src="https://use.fontawesome.com/de60d6322f.js"></script>
+
 </head>
 <body>
-    <header>
+<main>
+    <header class="container-fluid">
         <div class="container">
-            <img src="../img/logo_rosem.png" class="logo" />
-            <nav>
-                <a href="#" class="active">Main</a>
-                <a href="#">About</a>
-                <a href="#">Services</a>
-                <a href="#">Portfolio</a>
-                <a href="#">Block</a>
-                <a href="#">Contact</a>
-            </nav>
-            <div class="icons">
-                <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                <i class="fa fa-search" aria-hidden="true"></i>
+            <div class="row">
+                <div class="col-xs-4 col-md-3 col-lg-2 logo">
+                    <img src="../img/logo_rosem.png"/>
+                </div>
+                <nav class="col-xs-4 col-md-2 col-lg-8 float-xs-right float-lg-left menu">
+                    <a href="#" class="active">Main</a>
+                    <a href="#">About</a>
+                    <a href="#">Services</a>
+                    <a href="#">Portfolio</a>
+                    <a href="#">Block</a>
+                    <a href="#">Contact</a>
+                </nav>
+                <nav class="col-xs-4 col-md-7 col-lg-2 links">
+                    <a href="#"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
+                    <a href="#"><i class="fa fa-search" aria-hidden="true"></i></a>
+                </nav>
             </div>
         </div>
     </header>
-<ul class="slider">
-    <li>
-        <img src="../img/background.jpg"/>
-        <div class="slider-item-description">
-            <h2>if something is not happening for you, it doesn't mean it's never going to happen</h2>
-            <div class="buttons">
-                <a href="#" class="button active">See more</a>
-                <a href="#" class="button">Get now</a>
+    <div class="container-fluid">
+        <ul class="slider owl-carousel owl-theme">
+            <li class="item">
+                <img src="../img/background.jpg"/>
+                <div class="slider-item-description">
+                    <h2>if something is not happening for you, it doesn't mean it's never going to happen</h2>
+                    <div class="buttons">
+                        <a href="#" class="button active">See more</a>
+                        <a href="#" class="button">Get now</a>
+                    </div>
+                </div>
+            </li>
+            <li class="item">
+                <img src="../img/1.jpg"/>
+                <div class="slider-item-description">
+                    <h2>if something is not happening for you, it doesn't mean it's never going to happen</h2>
+                    <div class="buttons">
+                        <a href="#" class="button active">See more</a>
+                        <a href="#" class="button">Get now</a>
+                    </div>
+                </div>
+            </li>
+            <li class="item">
+                <img src="../img/2.jpg"/>
+                <div class="slider-item-description">
+                    <h2>if something is not happening for you, it doesn't mean it's never going to happen</h2>
+                    <div class="buttons">
+                        <a href="#" class="button active">See more</a>
+                        <a href="#" class="button">Get now</a>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="container content">
+        <div class="row">
+            <div class="col-xs-12 col-lg-6 col-xl-7 about-us">
+                <h4>Who we are & who we do</h4>
+                <p><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab alias consequatur debitis ducimus, eos eum, fugit inventore, ipsum iure labore laboriosam molestias nihil perferendis provident quae quisquam similique sunt voluptatibus.</span>
+                </p>
+                <p><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium adipisci doloremque dolorum obcaecati perferendis? Deserunt distinctio dolores, in incidunt ipsa ipsam itaque libero minus nostrum officiis rem sunt! Optio, sapiente.</span>
+                </p>
+                <a href="#" class="button active">Read more</a>
+            </div>
+            <div class="col-xs-12 col-lg-6 col-xl-5">
+                <img src="../img/devices.png"/>
             </div>
         </div>
-    </li>
-</ul>
-<div class="wrapper">
-    <div class="container">
-        <div class="content-wrapper">
-            <div class="about-us">
-            <h4>Who we are & who we do</h4>
-            <p><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab alias consequatur debitis ducimus, eos eum, fugit inventore, ipsum iure labore laboriosam molestias nihil perferendis provident quae quisquam similique sunt voluptatibus.</span></p>
-            <p><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium adipisci doloremque dolorum obcaecati perferendis? Deserunt distinctio dolores, in incidunt ipsa ipsam itaque libero minus nostrum officiis rem sunt! Optio, sapiente.</span></p>
-            <a href="#">Read more</a>
-        </div>
-            <img src="../img/devices.png"/>
-        </div>
     </div>
-</div>
+</main>
+<script src="https://use.fontawesome.com/de60d6322f.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+<script src ="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/owl.carousel.min.js"></script>
+<script>
+    $(document).ready(function(){
+        $('.owl-carousel').owlCarousel({
+            items:1
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        });
+    });
+</script>
 </body>
 </html>
