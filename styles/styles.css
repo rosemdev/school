@@ -5,6 +5,8 @@
 }
 
 header {
+    position: relative;
+    z-index: 2;
     height: 6.5rem;
     background-color: white;
     /*box-shadow: 0 3px 0 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);*/
@@ -41,33 +43,51 @@ header .logo img {
     width: 100%;
 }
 
-header .menu {
-    display: flex;
-    justify-content: flex-end;
+.menu {
+    position: relative;
 }
 
-header .menu::before {
-    content: 'BRG';
+.menu-button {
+    margin: 2rem 0 0 0;
+    display: block;
+    float: right;
 }
 
-header .menu a {
-    /**/
+.menu-popup {
     display: none;
-    /**/
-
-    font-weight: bold;
-    padding: 2.5rem 1rem;
+    flex-direction: column;
+    background-color: white;
+    box-shadow: 0 0 0.5rem #e0dddd;
+    border-radius: 2px;
+    text-align: center;
     text-transform: uppercase;
-    color: black;
-    border: solid 0 var(--active-color);
-    transition: color .4s, padding-bottom .4s, border-width .4s;
-    will-change: color, padding-bottom, border-width;
+    position: absolute;
+    top: calc(100% + 1rem);
+    right: 0;
+    z-index: 2;
 }
 
-header .menu a:hover, header .menu a.active {
-    color: var(--active-color);
-    padding-bottom: 2.1rem;
-    border-bottom-width: .4rem;
+.menu-popup[data-state=open] {
+    display: flex;
+}
+
+.menu-popup::before {
+    /*border: solid #dc3838;*/
+    content: "";
+    border: 20px solid transparent;
+    border-bottom: 20px solid #151212;
+    margin-left: auto;
+    display: block;
+    position: absolute;
+    bottom: 100%;
+    right: .5rem;
+}
+
+
+.menu a {
+    color: black;
+    padding: .5rem 2rem;
+
 }
 
 header .links {
@@ -104,7 +124,11 @@ i[class*=shopping-cart] {
     padding: 0;
 }
 
-.slider > li {
+.slider > div, .slider > div > div, .slider > div > div > div {
+    height: 100%;
+}
+
+.slider li {
     height: 100%;
 }
 
@@ -116,19 +140,13 @@ i[class*=shopping-cart] {
 }
 
 .slider img {
-    width: 100%;
     position: absolute;
     z-index: -1;
+    object-fit: cover;
+    height: 100%;
 }
 .item {
     width: 100%;
-}
-
-.owl-dots {
-    width: 2rem;
-    height: 2rem;
-    background-color: var(--active-color);
-    border-radius: 50%;
 }
 
 .slider h2 {
@@ -147,6 +165,7 @@ i[class*=shopping-cart] {
     flex-wrap: wrap;
     text-transform: uppercase;
     justify-content: center;
+    margin-bottom: 2.66rem;
 }
 
 .button {
@@ -199,8 +218,16 @@ i[class*=shopping-cart] {
 }
 
 .about-us a::after {
-    content:'>';
+    content: '';
+    margin-top: .3rem;
     margin-left: .6rem;
+    display: block;
+    width: .8rem;
+    height: .8rem;
+    float: right;
+    border-style: solid;
+    border-width: .2rem .2rem 0 0;
+    transform: rotate(45deg);
 }
 
 /* Large */
@@ -209,13 +236,35 @@ i[class*=shopping-cart] {
         padding: 0 15px;
     }
 
-    header .menu::before {
+    .menu-button {
         display: none;
     }
 
-    header .menu a {
-        display: block;
+    header .menu-popup {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        position: static;
+        box-shadow:none;
     }
+
+    header .menu a {
+        font-weight: bold;
+        padding: 2.5rem 1rem;
+        text-transform: uppercase;
+        color: black;
+        border: solid 0 var(--active-color);
+        transition: color .4s, padding-bottom .4s, border-width .4s;
+        will-change: color, padding-bottom, border-width;
+    }
+
+
+    header .menu a:hover, header .menu a.active {
+        color: var(--active-color);
+        padding-bottom: 2.1rem;
+        border-bottom-width: .4rem;
+    }
+
 
     .about-us h4 {
         text-align: left;
@@ -229,4 +278,10 @@ i[class*=shopping-cart] {
         font-size: 3rem;
         padding: 2rem;
     }
+
+    .slider img {
+        /*transform: translateY(50%);*/
+        /*margin-top: -50%;*/
+    }
 }
+

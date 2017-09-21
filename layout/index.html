@@ -12,8 +12,12 @@
           href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
     <link rel="stylesheet" type="text/css" href="../styles/styles.css">
     <link rel="stylesheet" type="text/css" href="../styles/reset.css">
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/assets/owl.carousel.min.css">
+    <link rel="stylesheet" type="text/css"
+          href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/assets/owl.carousel.min.css">
     <link href="https://fonts.googleapis.com/css?family=Libre+Franklin:400,400i,700,700i" rel="stylesheet">
+    <script src="https://use.fontawesome.com/de60d6322f.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/owl.carousel.min.js"></script>
 
 </head>
 <body>
@@ -24,17 +28,22 @@
                 <div class="col-xs-4 col-md-3 col-lg-2 logo">
                     <img src="../img/logo_rosem.png"/>
                 </div>
-                <nav class="col-xs-4 col-md-2 col-lg-8 float-xs-right float-lg-left menu">
-                    <a href="#" class="active">Main</a>
-                    <a href="#">About</a>
-                    <a href="#">Services</a>
-                    <a href="#">Portfolio</a>
-                    <a href="#">Block</a>
-                    <a href="#">Contact</a>
-                </nav>
+                <div class="col-xs-4 col-md-2 col-lg-8 float-xs-right float-lg-left menu">
+                    <div class="menu-button">
+                        <img src="../img/burger-menu.svg" id="mob"/>
+                    </div>
+                    <nav class="menu-popup" data-state="closed">
+                        <a href="#" class="active">Main</a>
+                        <a href="#">About</a>
+                        <a href="#">Services</a>
+                        <a href="#">Portfolio</a>
+                        <a href="#">Block</a>
+                        <a href="#">Contact</a>
+                    </nav>
+                </div>
                 <nav class="col-xs-4 col-md-7 col-lg-2 links">
-                    <a href="#"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
-                    <a href="#"><i class="fa fa-search" aria-hidden="true"></i></a>
+                    <a href="#"><i class="fa fa-shopping-cart"></i></a>
+                    <a href="#"><i class="fa fa-search"></i></a>
                 </nav>
             </div>
         </div>
@@ -89,16 +98,33 @@
         </div>
     </div>
 </main>
-<script src="https://use.fontawesome.com/de60d6322f.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
-<script src ="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/owl.carousel.min.js"></script>
+
 <script>
-    $(document).ready(function(){
+    $(document).ready(function () {
         $('.owl-carousel').owlCarousel({
-            items:1
+            items: 1,
+            loop: true,
+            autoplay: true,
+            autoplayTimeout: 2000,
+            autoplayHoverPause: true
+
 
         });
     });
+</script>
+
+<script>
+    var burger = document.querySelector(".menu-button");
+    var menu = document.querySelector(".menu-popup");
+    var toggleState = function(menu, open, closed) {
+        menu.dataset.state = menu.dataset.state === open ? closed : open;
+    };
+
+    burger.onclick = function () {
+        toggleState(menu, "closed", "open");
+    };
+
+
 </script>
 </body>
 </html>
