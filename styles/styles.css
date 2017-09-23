@@ -28,19 +28,33 @@ header > .container, header > .container > .row, header .logo {
     height: 100%;
 }
 
+.logo{
+    text-align: center;
+}
+
 header .logo::before {
     content: '';
     width: 0;
     height: 100%;
     display: inline-block;
     vertical-align: middle;
+
+}
+
+header .logo::after {
+    content: 'rosem';
+    text-transform: uppercase;
+    color: #464242;
+    display: block;
+    margin-top: -1.6rem;
 }
 
 header .logo img {
     display: inline-block;
     vertical-align: middle;
-    max-width: 8rem;
+    max-width: 6rem;
     width: 100%;
+    padding-bottom: .33rem;
 }
 
 .menu {
@@ -72,9 +86,8 @@ header .logo img {
 }
 
 .menu-popup::before {
-    /*border: solid #dc3838;*/
     content: "";
-    border: 20px solid transparent;
+    border: 15px solid transparent;
     border-bottom: 20px solid #151212;
     margin-left: auto;
     display: block;
@@ -124,7 +137,7 @@ i[class*=shopping-cart] {
     padding: 0;
 }
 
-.slider > div, .slider > div > div, .slider > div > div > div {
+.slider > div:first-child, .slider > div:first-child > div, .slider > div:first-child > div > div {
     height: 100%;
 }
 
@@ -155,17 +168,41 @@ i[class*=shopping-cart] {
     font-size: 8vw;
     padding: 4vw;
     max-width: 1200px;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 2rem auto;
     border-radius: .2rem;
 }
 
-.buttons {
+ul > .owl-dots {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+}
+
+ul .owl-dot {
+    display: inline-block;
+    padding: .8rem;
+}
+
+ul .owl-dot > span {
+    display: block;
+    height: 1rem;
+    width: 1rem;
+    border-radius: 50%;
+    background-color:white;
+}
+
+
+ul .owl-dot.active > span {
+    background-color: var(--active-color);
+}
+
+.slider .buttons {
     display: flex;
     flex-wrap: wrap;
     text-transform: uppercase;
     justify-content: center;
-    margin-bottom: 2.66rem;
+    margin-bottom: calc(2rem + 4vw);
 }
 
 .button {
@@ -282,6 +319,10 @@ i[class*=shopping-cart] {
     .slider img {
         /*transform: translateY(50%);*/
         /*margin-top: -50%;*/
+    }
+
+    .slider .buttons {
+        margin-bottom: 4rem;
     }
 }
 
