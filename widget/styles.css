@@ -1,0 +1,54 @@
+body {
+  font-family: 'Libre Franklin', sans-serif;
+  overflow-y: scroll;
+  margin: 0;
+  padding: 0;
+  line-height: 1.5;
+  background-color: #46313c;
+}
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+img {
+  display: block;
+}
+form {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+form p {
+  font-size: 2rem;
+  color: white;
+  margin: 1rem;
+}
+form textarea {
+  padding: 1rem;
+  height: 5rem;
+  width: 40%;
+  border: none;
+  margin: 1rem;
+  outline: none;
+  border-radius: 5px;
+}
+form input {
+  padding: 1rem;
+  border: none;
+  margin: 1rem;
+  outline: none;
+  border-radius: 5px;
+}
+form button {
+  border: none;
+  background-color: #003eff;
+  color: white;
+  padding: 1rem  2rem;
+  border-radius: 5px;
+}

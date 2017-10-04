@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css"
+          href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Libre+Franklin:400,400i,700,700i" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" type="text/css" href="jquery-ui.min.css">
+    <script src="external/jquery/jquery.js"></script>
+    <script src="jquery.min.js"></script>
+    <script src="jquery-ui.js"></script>
+    <title>task3</title>
+</head>
+<body>
+<form>
+
+    <p>Select date</p>
+    <input type="text" id="date" title="text">
+    <textarea type="text" placeholder="Input event"></textarea>
+    <button type="submit">Ok</button>
+
+</form>
+
+
+<script>
+
+    $( document ).ready(function() {
+
+        $.widget('my.myWidget', $.ui.dialog, {
+            self: this,
+            counter: 0,
+
+            _init: function () {
+                this.element.addClass('myDialog');
+                return this._super();
+            },
+
+            customClick : function () {
+
+                this.viewMessage();
+//                this.close();
+            },
+
+            viewMessage: function () {
+
+                if(this.element.hasClass('myDialog')) {
+                    this.element.html("<div><p>Goodbye!</p></div>").css({
+                        color : "red",
+                        textAlign : "center",
+                        fontSize: "2rem"
+                    });
+                }
+
+
+//                return this._super();
+            }
+
+        });
+
+
+
+
+
+        var date = $("#date"),
+            output = "";
+
+
+        $(date).datepicker();
+
+        $("button").click(function () {
+            output += "Your " + $("textarea").val() + " event was: " + $(date).datepicker( "getDate" );
+            var form = $("form");
+            $("form").after().html(output).css({
+                color : "#46313c",
+                textAlign : "center",
+                fontSize: "2rem"
+
+            });
+                form.myWidget({
+                buttons: {
+                    "Change color": function (event) {
+                        form.myWidget("customClick");
+                    }
+                }
+            });
+
+        });
+    });
+
+
+
+
+</script>
+
+</body>
+</html>
