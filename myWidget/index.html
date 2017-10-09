@@ -74,17 +74,16 @@
     </li>
 </ul>
 <!--<h2>Some test content</h2>-->
-<!--<script src="myWidget.jQuery.js"></script>-->
 <script src="accordionWdg.jQuery.js"></script>
-
-
 
 <script>
     $(document).ready(function () {
 
 
 
-        var accordionElement = $(".accordion").accordionWdg();
+        var accordionElement = $(".accordion").accordionWdg({
+            activeTab: 2
+        });
 
 
 
