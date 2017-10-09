@@ -48,7 +48,7 @@
             viewMessage: function () {
 
                 if(this.element.hasClass('myDialog')) {
-                    this.element.html("<div><p>Goodbye!</p></div>").css({
+                    this.element.html("<div>Goodbye!</div>").css({
                         color : "red",
                         textAlign : "center",
                         fontSize: "2rem"
@@ -82,7 +82,7 @@
             });
                 form.myWidget({
                 buttons: {
-                    "Change color": function (event) {
+                    "Ok": function (event) {
                         form.myWidget("customClick");
                     }
                 }

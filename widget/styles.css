@@ -52,3 +52,6 @@ form button {
   padding: 1rem  2rem;
   border-radius: 5px;
 }
+.myDialog {
+  color: red;
+}

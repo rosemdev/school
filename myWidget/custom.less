@@ -1,0 +1,83 @@
+@tab-icon-plus-circle: "\f055";
+@tab-icon-minus-circle: "\f056";
+
+body {
+  font-family: 'Libre Franklin', sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.5;
+  background-color: #433d3d;
+  color:white;
+}
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+img {
+  display: block;
+}
+
+.accordion {
+  list-style: none;
+  padding: 0;
+
+  .tab {
+    background-color: #138390;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  h3 {
+
+    background-color: #138390;
+    margin: 0;
+    padding: 1rem 2rem;
+    text-transform: uppercase;
+  }
+
+  p {
+    padding: 1rem 2rem;
+  }
+  i {
+    //padding:1rem 2rem;
+    margin-right: 1.5rem;
+  }
+}
+
+
+
+[data-role=tab] {
+  margin: 1rem 0;
+
+  & [data-role=toggle] {
+    transition: background 400ms;
+
+    & > i::before {
+      content: @tab-icon-plus-circle;
+    }
+  }
+
+  &.active {
+    & [data-role=toggle] {
+      background: #2ab6c7;
+      cursor: pointer;
+
+      & > i::before {
+        content: @tab-icon-minus-circle;
+      }
+    }
+  }
+}
+
+[data-role=content] {
+  overflow: hidden;
+  display: none;
+}
+

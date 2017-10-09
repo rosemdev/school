@@ -1,0 +1,62 @@
+body {
+  font-family: 'Libre Franklin', sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.5;
+  background-color: #433d3d;
+  color: white;
+}
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+img {
+  display: block;
+}
+.accordion {
+  list-style: none;
+  padding: 0;
+}
+.accordion .tab {
+  background-color: #138390;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.accordion h3 {
+  background-color: #138390;
+  margin: 0;
+  padding: 1rem 2rem;
+  text-transform: uppercase;
+}
+.accordion p {
+  padding: 1rem 2rem;
+}
+.accordion i {
+  margin-right: 1.5rem;
+}
+[data-role=tab] {
+  margin: 1rem 0;
+}
+[data-role=tab] [data-role=toggle] {
+  transition: background 400ms;
+}
+[data-role=tab] [data-role=toggle] > i::before {
+  content: "\f055";
+}
+[data-role=tab].active [data-role=toggle] {
+  background: #2ab6c7;
+  cursor: pointer;
+}
+[data-role=tab].active [data-role=toggle] > i::before {
+  content: "\f056";
+}
+[data-role=content] {
+  overflow: hidden;
+  display: none;
+}
