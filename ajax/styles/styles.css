@@ -1,0 +1,9 @@
+.ui-dialog .ui-dialog-title {
+  margin: auto;
+  font-size: 2rem;
+  color: #00076d;
+}
+.ui-dialog .ui-dialog-content {
+  padding: 2rem;
+  color: #00076d;
+}

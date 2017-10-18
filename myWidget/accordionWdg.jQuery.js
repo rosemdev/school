@@ -16,7 +16,7 @@
 
         _create: function () {
             var self = this;
-            this.tabs = this.element.find("[data-role=tab]"),
+            this.tabs = this.element.find("[data-role=tab]");
                 toggleList = this.element.find("[data-role=toggle]");
 
 
