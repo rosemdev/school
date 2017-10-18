@@ -1,3 +1,5 @@
+
+
 (function($) {
    $.widget( "smile.tableSmile", {
       defaultClass: 'smile-table-widget',
