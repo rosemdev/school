@@ -1,11 +1,10 @@
 requirejs.config({
-    path:{
-
-        'jquery' :'libs/jquery.min',
-        'jquery-ui' :'libs/jquery.ui',
-        'table.jQuery' : 'js/table.jQuery.js'
+    paths:{
+        'jquery': 'libs/jquery.min',
+        'jqueryUI': 'libs/jquery-ui.min',
+        'smileTable': 'js/table.jQuery',
+        'ajaxCall': 'js/ajaxCall'
     }
-
-
 });
+
 

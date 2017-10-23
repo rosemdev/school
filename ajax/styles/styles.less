@@ -5,8 +5,48 @@
     color: #00076d;
   }
 
-  .ui-dialog-content {
+  & .ui-dialog-titlebar {
+    background-color: #c7bce2;
+
+  }
+
+  & .ui-dialog-content {
     padding: 2rem;
     color: #00076d;
   }
 }
+table {
+  border-collapse: collapse;
+  margin: auto;
+
+  & thead{
+    font-size: 1.5rem;
+    padding: 1rem;
+    background: #c7bce2;
+    color: white;
+  }
+
+  & tr {
+    border-bottom: 1px solid #9c8f8f;
+    &:hover{
+      background-color: rgba(232, 232, 232, 0.39);
+    }
+  }
+}
+
+button {
+  border: 0;
+  background: #c7bce2;
+  padding: 1rem 2rem;
+  border-radius: 10px;
+  margin: .5rem;
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: white;
+
+  &:hover{
+    background-color: #a691d8;;
+  }
+}
+
+

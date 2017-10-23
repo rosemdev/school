@@ -3,7 +3,39 @@
   font-size: 2rem;
   color: #00076d;
 }
+.ui-dialog .ui-dialog-titlebar {
+  background-color: #c7bce2;
+}
 .ui-dialog .ui-dialog-content {
   padding: 2rem;
   color: #00076d;
+}
+table {
+  border-collapse: collapse;
+  margin: auto;
+}
+table thead {
+  font-size: 1.5rem;
+  padding: 1rem;
+  background: #c7bce2;
+  color: white;
+}
+table tr {
+  border-bottom: 1px solid #9c8f8f;
+}
+table tr:hover {
+  background-color: rgba(232, 232, 232, 0.39);
+}
+button {
+  border: 0;
+  background: #c7bce2;
+  padding: 1rem 2rem;
+  border-radius: 10px;
+  margin: .5rem;
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: white;
+}
+button:hover {
+  background-color: #a691d8;
 }

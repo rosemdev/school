@@ -1,8 +1,13 @@
-$(document).ready(function () {
+define([
+    'jquery',
+    'jqueryUI',
+    'smileTable'
+], function (jquery, jqueryUI, smileTable) {
     $.widget("smile.ajaxCall", $.smile.tableSmile, {
-
-//            users: [],
-
+        ajaxRequest: {
+            init: '',
+            response: null
+        },
 
         /**
          * Init element
@@ -23,7 +28,7 @@ $(document).ready(function () {
                     }
                 ],
 
-                title: "Details"
+                width: 600
 
             });
 
@@ -37,9 +42,12 @@ $(document).ready(function () {
                 userWrapper.html('');
 
                 var index = tbody.find('tr').index(event.currentTarget.closest('tr', tbody)),
-                    user = self.ajaxRequest.response[index];
+                    id =index + 1,
+                    user = self.ajaxRequest.response[index],
+                    title = self.ajaxRequest.response[index].name;
 
                 self.printObject(userWrapper, user);
+                userWrapper.parent().find("span.ui-dialog-title").text('Details about: ' + title);
                 userWrapper.dialog('open');
 
             });
@@ -57,7 +65,6 @@ $(document).ready(function () {
             if (this.ajaxRequest.response) {
                 $.each(this.ajaxRequest.response, function (index, row) {
                     var tableTR = $('<tr>');
-//
 
                     $.each(self.allowedColumn, function (index, key) {
                         var tableTD = $('<td>').text(row[key]);
@@ -77,12 +84,40 @@ $(document).ready(function () {
         printObject: function (printContainer, object) {
             var self = this;
             $.each(object, function (key, value) {
+                if ($.isPlainObject(value)) {
+                    var div = $('<ul class="' + key + '">');
+                    self.printObject(div, value);
+                    printContainer.append('<li><strong>' + key + ': </strong></li>').append(div);
+                } else {
                     printContainer.append('<li><strong>' + key + ': </strong>' + value + '</li>');
+                }
+
+            });
+        },
+
+        callAjax: function () {
+            var info = $('.tableSmile').before('<h1></h1>'),
+                id = null,
+                self = this;
+
+            function funcBefore() {
+                $(info).text("Please wait");
+            }
+
+            $.ajax({
+
+                url: "https://jsonplaceholder.typicode.com/users/" + id,
+                method: "GET",
+                beforeSend: funcBefore,
+                success:  function (data) {
+                    if (typeof(data) === 'object') {
+                        self.ajaxRequest.response = data;
+                        data.printObject();
+                        console.log(data.printObject());
+                    }
+                }
 
             });
         }
     });
-
-
-    $(".tableSmile").ajaxCall();
 });

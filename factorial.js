@@ -1,9 +1,23 @@
 function Factorial(n) {
-    for(var i = 0; i<= n; i++){
-        n = n-1;
+    return (n >0) ? n* Factorial(n-1) : "Please, input n > 0";
 
-    }
-    return n;
 }
 
-console.log(Factorial(5));
+console.log(Factorial(-4));
+
+
+function fibonachi(n) {
+    var arr = [0,1];
+
+    for(var i = 0; i < arr[n]; ++i ){
+        arr.push(arr[n-1] + arr[n-2]);
+    }
+
+    
+}
+
+console.log(fibonachi(4));
+
+
+// mas[5]=mas[4]+mas[3];
+
