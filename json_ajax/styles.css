@@ -1,0 +1,196 @@
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  background-color: #0e0d0dd4;
+  color: white;
+}
+a {
+  padding: 15px;
+  background-color: cadetblue;
+  border-radius: 3px;
+  margin: 10px;
+  cursor: pointer;
+  opacity: 1;
+  transition: opacity .7s ease-out,
+  background-color .3s ease-in-out;
+
+}
+
+a:hover {
+  background-color: #126669cc;
+}
+
+.hidden {
+  opacity: 0.3;
+  pointer-events: none;
+
+}
+
+.animal-info {
+  width: 60%;
+  padding: 20px;
+  font-size: 20px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+#app {
+  color: black;
+}
+
+.app-title {
+  text-align: center;
+  font-weight: normal;
+  font-size: 2.6rem;
+  color: white;
+}
+
+.animal {
+  max-width: 650px;
+  padding: 20px;
+  margin: 30px auto;
+  background-color: #fff;
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.animal h4 {
+  margin: 0 0 6px 0;
+}
+
+.pet-photo {
+  float: left;
+  width: 40%;
+  margin-right: 15px;
+}
+
+.pet-name {
+  font-size: 2rem;
+  font-weight: normal;
+  margin: 0 0 1rem 0;
+}
+
+.species {
+  font-size: 0.9rem;
+  color: #888;
+  vertical-align: middle;
+}
+
+.foods-list {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  left: 17px;
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+
+.footer {
+  font-size: 0.7rem;
+  color: #888;
+  text-align: center;
+  margin: 0;
+}
+
+.user-table {
+  position: relative;
+}
+
+table {
+  border-collapse: collapse;
+  /*border-style: separate;*/
+  margin: 25px;
+}
+
+td, th {
+  border: 1px solid rgb(190,190,190);
+  padding: 22px;
+  /*background-color: tomato;*/
+
+}
+
+th {
+  background-color: #0006;
+}
+
+.popup {
+  position: absolute;
+  top: 20%;
+  z-index: 2;
+  background-color: #103E3F;
+  margin: 15px;
+  left: 15%;
+  right: 16%;
+  text-align: center;
+  display: flex;
+
+}
+
+.popup-header {
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column-reverse;
+  align-items: center;
+  background-color: tomato;
+  padding: 20px;
+}
+
+.data {
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  /*justify-content: space-around;*/
+}
+
+.photo {
+  order: 1;
+  align-self: center;
+  margin-right: 10px;
+}
+
+ul {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 0;
+}
+li {
+  margin: 5px ;
+}
+
+strong {
+  margin: 15px;
+}
+
+.cross {
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+span.line {
+  width: 23px;
+  background-color: white;
+  margin: 3px;
+  transition: 0.4s;
+  padding: 2px;
+  display: block;
+}
+
+/* Rotate first bar */
+.change, .cross > span:first-child {
+  transform: rotate(-45deg) translate(7px, -7px);
+}
+
+/* Rotate last bar */
+.change, .cross > span:last-child {
+  transform: rotate(45deg) translate(-12px, -12px);
+}
+
