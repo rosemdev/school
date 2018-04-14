@@ -1,0 +1,57 @@
+* {
+    font-family: 'Quicksand', sans-serif;
+}
+body {
+    background-color: #22201ff5;
+}
+
+.panel {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: tomato;
+    padding: 20px;
+    margin: 20px 45px;
+    color: white;
+    /*font-size: 35px;*/
+    font-weight: 700;
+}
+
+/*.panel  > span::before  {*/
+    /*content: "[ ";*/
+/**/
+/**/
+/*}*/
+
+.panel::after {
+    content: " [closed]";
+}
+
+.panel.active::after {
+    content: " [opened]";
+}
+
+
+.panel:hover {
+    background-color: #e42402;
+    transition:background-color .4s ease-in;
+}
+
+article {
+    opacity: 0;
+    padding: 20px;
+    margin: 45px 65px;
+    color: white;
+    font-size: 25px;
+    display: none;
+    /*height: 0;*/
+    transition: height 0s 1s, opacity 1s cubic-bezier(0, 0.69, 1, 0.42);
+}
+
+article.active  {
+    opacity: 1;
+    display: block;
+    /*height: auto;*/
+    transition: height 0s 0s, opacity 1s cubic-bezier(0, 0.69, 1, 0.42);
+}
+
